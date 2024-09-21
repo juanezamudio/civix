@@ -6,7 +6,7 @@ import Calendar from '../components/Calendar';
 import Notebook from '../components/Notebook';
 
 
-export default function Card({title, body, svg}: any) {
+export default function Card({title, body, svg, style}: any) {
 
     return (
         <View style={styles.container}>
@@ -19,7 +19,7 @@ export default function Card({title, body, svg}: any) {
                 ? (<Notebook/>)
                 :<></>
             }
-            <View style={styles.textContainer}>
+            <View style={[style, styles.textContainer]}>
                 <ThemedText type="subtitle" style={styles.title}>{title}</ThemedText>
                 <ThemedText style={styles.body}>{body}</ThemedText>
             </View>

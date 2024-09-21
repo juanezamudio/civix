@@ -1,3 +1,4 @@
+import Card from "@/components/Card";
 import Header from "@/components/Header";
 import Magnifier from "@/components/Magnifier";
 import ThemedButton from "@/components/ThemedButton";
@@ -23,12 +24,16 @@ export default function Home() {
                 onPress={() => {
                     router.push('/(tabs)/chat')
                 }}/>
-            <View>
+            <ScrollView
+                showsVerticalScrollIndicator={false}>
                 <View style={styles.headingRow}>
                     <ThemedText style={styles.heading}>Recent</ThemedText>
                     <Magnifier width={25} padding={25}></Magnifier>
                 </View>
-                <ScrollView horizontal contentContainerStyle={{gap: 15}}>
+                <ScrollView 
+                    horizontal 
+                    contentContainerStyle={{gap: 15}} 
+                    showsHorizontalScrollIndicator={false}>
                     <ThemedButton
                         title="Next Town Hall Meeting"
                         type="outline"
@@ -41,8 +46,94 @@ export default function Home() {
                         style={styles.recentButtons}
                         textStyle={styles.recentButtonsText}
                     />
+                    <ThemedButton
+                        title="Voting Locations"
+                        type="outline"
+                        style={styles.recentButtons}
+                        textStyle={styles.recentButtonsText}
+                    />
                 </ScrollView>
-            </View>
+                <View style={styles.cardRow}>
+                    <ThemedText style={styles.heading}>Get Involved</ThemedText>
+                    <ScrollView
+                        horizontal
+                        contentContainerStyle={{gap: 15}}
+                        showsHorizontalScrollIndicator={false}>
+                        <Card
+                            title="Camilus House"
+                            body="Safe Heaven is a women’s shelter that looks for volunteers that want to improve... "
+                            style={styles.card}>
+                        </Card>
+                        <Card
+                            title="Miami Soup Kitchen"
+                            body="Safe Heaven is a women’s shelter that looks for volunteers that want to improve... "
+                            style={styles.card}>
+                        </Card>
+                    </ScrollView>
+                </View>
+                <View>
+                    <ThemedText style={styles.heading}>Trending Prompts</ThemedText>
+                    <ScrollView 
+                    horizontal 
+                    contentContainerStyle={{gap: 15}} 
+                    showsHorizontalScrollIndicator={false}>
+                    <View style={styles.trendingRows}>
+                    <View style={styles.row}>
+                        <ThemedButton
+                            title="Potholes in Aventura"
+                            type="outline"
+                            style={styles.recentButtons}
+                            textStyle={styles.recentButtonsText}
+                        />
+                        <ThemedButton
+                            title="Sustainability Projects"
+                            type="outline"
+                            style={styles.recentButtons}
+                            textStyle={styles.recentButtonsText}
+                        />
+                        <ThemedButton
+                            title="Local Parks"
+                            type="outline"
+                            style={styles.recentButtons}
+                            textStyle={styles.recentButtonsText}
+                        />
+                        <ThemedButton
+                            title="Police Departments"
+                            type="outline"
+                            style={styles.recentButtons}
+                            textStyle={styles.recentButtonsText}
+                        />
+                    </View>
+                    <View style={styles.row}>
+                        <ThemedButton
+                            title="School Districts"
+                            type="outline"
+                            style={styles.recentButtons}
+                            textStyle={styles.recentButtonsText}
+                        />
+                        <ThemedButton
+                            title="Food Drives"
+                            type="outline"
+                            style={styles.recentButtons}
+                            textStyle={styles.recentButtonsText}
+                        />
+                        <ThemedButton
+                            title="Community Health Clinics"
+                            type="outline"
+                            style={styles.recentButtons}
+                            textStyle={styles.recentButtonsText}
+                        />
+                        <ThemedButton
+                            title="Legal Services"
+                            type="outline"
+                            style={styles.recentButtons}
+                            textStyle={styles.recentButtonsText}
+                        />
+                    </View>
+                    </View>
+                </ScrollView>
+                </View>
+            </ScrollView>
         </View>
     )
 }
@@ -89,5 +180,20 @@ const styles = StyleSheet.create({
     recentButtonsText: {
         fontSize: 16,
         fontWeight: 'bold'
+    },
+    cardRow: {
+        flexDirection: 'column'
+    },
+    card: {
+        maxWidth: 237,
+        height: 271,
+        padding: 20
+    },
+    trendingRows: {
+        gap: 15
+    },
+    row: {
+        flexDirection: 'row',
+        gap: 15
     }
 })
