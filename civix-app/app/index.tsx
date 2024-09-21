@@ -12,7 +12,6 @@ import Card from "@/components/Card";
 export default function Landing() {
     return (
         <View style={styles.container}>
-            <Header></Header>
             <Logo width={287} height={183} style={styles.logo}></Logo>
             <ThemedText type='title' style={[styles.title, {color: darkColor}]}>Unlock the potential of civic engagement</ThemedText>
             <View style={styles.buttonContainer}>
@@ -21,7 +20,7 @@ export default function Landing() {
                 type="default"
                 style={styles.button}
                 onPress={() => {
-                    router.push('/(tabs)/chat')
+                    router.push('/(tabs)/')
                 }}
             />
             <ThemedButton
