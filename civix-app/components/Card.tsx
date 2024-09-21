@@ -1,4 +1,4 @@
-import { accentColor, lightAccentColor } from "@/constants/Colors";
+import { accentColor, darkColor, lightAccentColor } from "@/constants/Colors";
 import { View, StyleSheet } from "react-native";
 import { ThemedText } from "./ThemedText";
 import Magnifier from '../components/Magnifier';
@@ -21,7 +21,7 @@ export default function Card({title, body, svg, style}: any) {
             }
             <View style={[style, styles.textContainer]}>
                 <ThemedText type="subtitle" style={styles.title}>{title}</ThemedText>
-                <ThemedText style={styles.body}>{body}</ThemedText>
+                <ThemedText style={[style, styles.body]}>{body}</ThemedText>
             </View>
         </View>
     )
@@ -38,9 +38,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column'
     },
     title: {
-        color: accentColor
+        color: darkColor
     },
     body: {
-        color: accentColor
+        color: darkColor
     }
 })

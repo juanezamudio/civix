@@ -179,7 +179,8 @@ const styles = StyleSheet.create({
     },
     recentButtonsText: {
         fontSize: 16,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: darkColor
     },
     cardRow: {
         flexDirection: 'column'

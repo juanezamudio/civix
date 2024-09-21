@@ -37,16 +37,19 @@ export default function Landing() {
                     title="Resource Finder"
                     body="Ask Civix GPT for real-time information on city resources, like food banks and clinics, or discover upcoming community events in your area."
                     svg="magnifier"
+                    style={styles.cardBody}
                 />
                 <Card
                     title="Civic Events"
                     body="Stay updated on important town halls and build community through events tailored to your interests and location."
                     svg="calendar"
+                    style={styles.cardBody}
                 />
                 <Card
                     title="Report Community Issues"
                     body="Report local problems like potholes, broken streetlights, and more, and track the status of your reports."
                     svg="notebook"
+                    style={styles.cardBody}
                 />
             </View>
         </View>
@@ -72,10 +75,13 @@ const styles = StyleSheet.create({
     },
     button: {
         flex: 1,
-        borderRadius: 10
+        borderRadius: 10,
+       
     },
     cardContainer: {
         marginTop: 15,
-        maxHeight: 50
+    },
+    cardBody: {
+        width: 300
     }
 })
