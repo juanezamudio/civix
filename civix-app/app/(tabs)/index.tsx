@@ -8,6 +8,7 @@ import { ScrollView, StyleSheet } from "react-native";
 export default function Home() {
     return (
         <ScrollView style={styles.container}>
+            
             <ThemedText type='title' style={{color: darkColor}}>Welcome, user</ThemedText>
             <ThemedButton 
                 title="+ New Chat" 
