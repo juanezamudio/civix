@@ -66,7 +66,7 @@ export default function Home() {
                         </Card>
                         <Card
                             title="Miami Soup Kitchen"
-                            body="Safe Heaven is a women’s shelter that looks for volunteers that want to improve... "
+                            body="Miami Soup Kitchen is a community resource center that provides food to the most vulnerable people in our society. "
                             style={styles.card}>
                         </Card>
                     </ScrollView>
@@ -173,14 +173,14 @@ const styles = StyleSheet.create({
         flex: 1
     },
     recentButtons: {
-        backgroundColor: 'grey',
+        backgroundColor: 'teal',
         borderRadius: 25,
 
     },
     recentButtonsText: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: darkColor
+        color: "white"
     },
     cardRow: {
         flexDirection: 'column'
@@ -188,7 +188,9 @@ const styles = StyleSheet.create({
     card: {
         maxWidth: 237,
         height: 271,
-        padding: 15
+        padding: 15,
+        backgroundColor: '#008055',
+        borderRadius: 15
     },
     trendingRows: {
         gap: 15

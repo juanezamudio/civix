@@ -1,3 +1,4 @@
+import Logo from "@/components/Logo";
 import Message, { MessageProps } from "@/components/Message";
 import ThemedButton from "@/components/ThemedButton";
 import { ThemedText } from "@/components/ThemedText";
@@ -62,31 +63,37 @@ export default function Chat() {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <ThemedText type="defaultSemiBold" style={{color: darkColor}}>This is the beginning of your conversation...</ThemedText>
-
             {
+                messages.length == 0 
+                ? <View
+                    style={{
+                        justifyContent: 'center', 
+                        alignItems: 'center'}}>
+                    <Logo/>
+                  </View>
+                :
                 messages.map((message, index) => (
                     <Message
                     key={index}
                     author={message.author}
                     message={message.message}/>
                     ))
-                }
+            }
 
             </ScrollView>
 
             <KeyboardAvoidingView
                 behavior={ Platform.OS === 'ios' ? 'padding' : 'height' }
-                style={{flexDirection: 'row', paddingVertical: screenPadding}}>
+                style={{flexDirection: 'row', paddingVertical: screenPadding, gap: 5}}>
                 <TextInput
                     style={styles.textFieldStyle}
                     returnKeyType={'send'}
-                    placeholder="Type your message here"
-                    placeholderTextColor={'#a0a0a0'}
+                    placeholder="What would you like to ask?"
+                    placeholderTextColor={'#ffffff'}
                     readOnly={textFieldDisabled ? true : false}
                     value={messageTextField}
                     onChangeText={(text) => setMessageTextField(text)} />
-                <ThemedButton title="Send" onPress={handleSubmitMessage}/>
+                <ThemedButton style={styles.button} title="Send" onPress={handleSubmitMessage}/>
             </KeyboardAvoidingView>
         </View>
     )
@@ -102,8 +109,12 @@ const styles = StyleSheet.create({
     textFieldStyle: {
         flex: 1,
         paddingHorizontal: 10,
-        backgroundColor: '#f9f9f9',
+        backgroundColor: 'grey',
         color: darkColor,
+        borderRadius: 15
         
+    },
+    button: {
+        borderRadius: 15
     }
 })

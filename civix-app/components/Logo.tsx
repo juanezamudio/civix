@@ -1,7 +1,7 @@
 import { View } from "react-native"
 import { Svg, Path } from "react-native-svg"
 
-export default function Logo({style, width, height}: any) {
+export default function Logo({style, width=287, height=183}: any) {
     return(
         <View style={style}>
         <Svg width={width} height={height} viewBox="0 0 287 183" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -6,7 +6,7 @@ import Calendar from '../components/Calendar';
 import Notebook from '../components/Notebook';
 
 
-export default function Card({title, body, svg, style}: any) {
+export default function Card({title, body, svg, landing, style}: any) {
 
     return (
         <View style={styles.container}>
@@ -19,7 +19,7 @@ export default function Card({title, body, svg, style}: any) {
                 ? (<Notebook/>)
                 :<></>
             }
-            <View style={[style, styles.textContainer]}>
+            <View style={[{backgroundColor: landing && 'teal'}, style, styles.textContainer]}>
                 <ThemedText type="subtitle" style={styles.title}>{title}</ThemedText>
                 <ThemedText style={[style, styles.body]}>{body}</ThemedText>
             </View>
@@ -31,16 +31,17 @@ const styles = StyleSheet.create({
     container: {
         marginTop: 15,
         borderRadius: 15,
-        backgroundColor: 'grey',
+        backgroundColor: 'teal',
         flexDirection: 'row'
     },
     textContainer: {
         flexDirection: 'column'
     },
     title: {
-        color: darkColor
+        color: "white"
     },
     body: {
-        color: darkColor
+        color: darkColor,
+        fontWeight: 'bold'
     }
 })

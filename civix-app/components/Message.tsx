@@ -13,7 +13,7 @@ export default function Message({
 }: MessageProps) {
     return (
         <View>
-            <ThemedText type="subtitle" style={{color: darkColor}}>{author}</ThemedText>
+            <ThemedText type="subtitle" style={{color: darkColor, textAlign: author == 'CiVi' ? 'right' : 'left'}}>{author}</ThemedText>
             <ThemedText style={{color: darkColor}}>{message}</ThemedText>
         </View>
     )
