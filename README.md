@@ -164,7 +164,3 @@ Civix is open-source and licensed under the **MIT License**. See the full licens
 ## 🌟 Acknowledgements
 
 This project was built during a hackathon with the goal of improving civic engagement and community involvement. We want to thank our mentors, teammates, and the open-source community for their support!
-
----
-
-Feel free to customize this README to fit the final state of your project, and good luck with Civix!
