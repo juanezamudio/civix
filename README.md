@@ -1,6 +1,6 @@
 # Civix
 
-![Civix Logo]('./assets/images/logo.png') <!-- Add your logo URL here -->
+![Civix Logo]('./civix-app/assets/images/logo.png') <!-- Add your logo URL here -->
 
 Civix is a **civic engagement platform** designed to make it easier for citizens to access community resources, track local government spending, stay updated on civic events, and report local issues. Our mission is to empower citizens with the tools and information they need to better engage with their communities and local governments. 
 
