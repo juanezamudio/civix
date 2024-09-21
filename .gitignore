@@ -3,3 +3,4 @@ secrets.json
 node_modules
 .venv
 __pycache__
+.env

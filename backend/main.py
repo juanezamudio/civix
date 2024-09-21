@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from . import civix_rag
+import civix_rag
 
 app = FastAPI()
 
