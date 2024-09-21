@@ -13,7 +13,7 @@ export default function Home() {
         <View style={styles.container}>
             <Header style={styles.header}></Header>
             <View style={styles.titleContainer}>
-            <ThemedText type='title' style={[{color: darkColor}, styles.title]}>Good Morning, Juan</ThemedText>
+            <ThemedText type='title' style={[{color: darkColor}, styles.title]}>Good Afternoon, Juan</ThemedText>
             <Image style={styles.profilePic} resizeMode='contain' source={require('../../assets/images/profile-pic.png')}/>
             </View>
             <ThemedButton 
@@ -60,8 +60,8 @@ export default function Home() {
                         contentContainerStyle={{gap: 15}}
                         showsHorizontalScrollIndicator={false}>
                         <Card
-                            title="Camilus House"
-                            body="Safe Heaven is a women’s shelter that looks for volunteers that want to improve... "
+                            title="Camillus House"
+                            body="Camillus House serves the hungry, the homeless, and the forgotten of Miami-Dade County. We provide them with material help to create a better future."
                             style={styles.card}>
                         </Card>
                         <Card
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     card: {
         maxWidth: 237,
         height: 271,
-        padding: 20
+        padding: 15
     },
     trendingRows: {
         gap: 15

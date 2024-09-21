@@ -22,19 +22,19 @@ export default function TabsLayout() {
                 name="chat"
                 options={{
                     title: '',
-                    tabBarIcon: ({focused, color, size}) => <Magnifier></Magnifier>,
+                    tabBarIcon: ({focused, color, size}) => <Magnifier focused={focused}></Magnifier>,
                 }} />
             <Tabs.Screen
                 name="events"
                 options={{
                     title: '',
-                    tabBarIcon: ({focused, color, size}) => <Calendar></Calendar>,
+                    tabBarIcon: ({focused, color, size}) => <Calendar focused={focused}></Calendar>,
                 }} />
             <Tabs.Screen
                 name="community_issues"
                 options={{
                     title: '',
-                    tabBarIcon: ({focused, color, size}) => <Notebook></Notebook>,
+                    tabBarIcon: ({focused, color, size}) => <Notebook focused={focused}></Notebook>,
                 }} />
         </Tabs>
     )
