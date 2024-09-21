@@ -4,13 +4,15 @@ import { type ButtonProps, Pressable, ViewProps, StyleSheet, Text, PressableProp
 
 export type ThemedButtonProps = PressableProps & {
     type?: 'default' | 'outline',
-    title?: string
+    title?: string,
+    textStyle?: any
 }
 
 export default function ThemedButton({
     type = 'default', 
     style, 
     title,
+    textStyle,
     ...rest
     }: ThemedButtonProps) {
 
@@ -25,7 +27,8 @@ export default function ThemedButton({
                 <Text style={[
                     styles.text,
                     type === 'default' ? styles.defaultButtonText : undefined,
-                    type === 'outline' ? styles.outlineButtonText : undefined
+                    type === 'outline' ? styles.outlineButtonText : undefined,
+                    textStyle
                     ]}>{title}</Text>
             </Pressable>
         )
