@@ -12,7 +12,7 @@ export default function Home() {
             <Header style={styles.header}></Header>
             <View style={styles.titleContainer}>
             <ThemedText type='title' style={[{color: darkColor}, styles.title]}>Good Morning, Juan</ThemedText>
-            <Image 
+            {/* <Image/> */}
             </View>
             <ThemedButton 
                 title="+ New Chat" 
