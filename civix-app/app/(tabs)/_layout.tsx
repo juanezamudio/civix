@@ -8,6 +8,7 @@ export default function TabsLayout() {
                 name="index"
                 options={{
                     title: 'Home',
+                    headerShown: true
                 }} />
             <Tabs.Screen
                 name="chat"

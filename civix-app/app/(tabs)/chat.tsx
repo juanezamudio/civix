@@ -1,10 +1,10 @@
+import Message from "@/components/Message";
 import ThemedButton from "@/components/ThemedButton";
 import { ThemedText } from "@/components/ThemedText";
 import { darkColor, white } from "@/constants/Colors";
 import { screenPadding } from "@/constants/Layout";
-import { router } from "expo-router";
 import { useState } from "react";
-import { Button, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TextInput, View } from "react-native";
 
 export default function Chat() {
     
@@ -13,7 +13,8 @@ export default function Chat() {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <ThemedText type="defaultSemiBold">This is the beginning of your conversation...</ThemedText>
+                <ThemedText type="defaultSemiBold" style={{color: darkColor}}>This is the beginning of your conversation...</ThemedText>
+
             </ScrollView>
 
             <KeyboardAvoidingView
