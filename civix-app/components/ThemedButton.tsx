@@ -1,4 +1,5 @@
 import { accentColor, white } from "@/constants/Colors";
+import { screenPadding, textPadding } from "@/constants/Layout";
 import { type ButtonProps, Pressable, ViewProps, StyleSheet, Text, PressableProps } from "react-native";
 
 export type ThemedButtonProps = PressableProps & {
@@ -22,6 +23,7 @@ export default function ThemedButton({
             ]}
             {...rest}>
                 <Text style={[
+                    styles.text,
                     type === 'default' ? styles.defaultButtonText : undefined,
                     type === 'outline' ? styles.outlineButtonText : undefined
                     ]}>{title}</Text>
@@ -32,6 +34,11 @@ export default function ThemedButton({
 const styles = StyleSheet.create({
     button: {
         padding: 8,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    text: {
+        padding: textPadding
     },
     defaultButton: {
         backgroundColor: accentColor,

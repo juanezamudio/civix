@@ -1,6 +1,7 @@
 import { Text, type TextProps, StyleSheet } from 'react-native';
 
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { textPadding } from '@/constants/Layout';
 
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
@@ -21,6 +22,7 @@ export function ThemedText({
     <Text
       style={[
         { color },
+        styles.all,
         type === 'default' ? styles.default : undefined,
         type === 'title' ? styles.title : undefined,
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
@@ -34,6 +36,9 @@ export function ThemedText({
 }
 
 const styles = StyleSheet.create({
+  all: {
+    paddingVertical: textPadding
+  },
   default: {
     fontSize: 16,
     lineHeight: 24,

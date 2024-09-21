@@ -1,13 +1,14 @@
 import ThemedButton from "@/components/ThemedButton";
 import { ThemedText } from "@/components/ThemedText";
+import { darkColor } from "@/constants/Colors";
 import { screenPadding } from "@/constants/Layout";
 import { router } from "expo-router";
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 export default function Home() {
     return (
         <ScrollView style={styles.container}>
-            <Text>Welcome, user</Text>
+            <ThemedText type='title' style={{color: darkColor}}>Welcome, user</ThemedText>
             <ThemedButton 
                 title="+ New Chat" 
                 type="default"
