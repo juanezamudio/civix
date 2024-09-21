@@ -13,7 +13,7 @@ def load_api_key(secrets_file="secrets.json"):
 api_key = load_api_key()
 openai.api_key = api_key
 
-documents = ["miami-events.html", "rag.txt"]
+documents = ["miami-events.html", "rag.txt", "voter-information-guide.pdf"]
 
 reader = SimpleDirectoryReader("./")
 index = VectorStoreIndex.from_documents(reader.load_data())
