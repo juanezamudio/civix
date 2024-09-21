@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { ThemedText } from "./ThemedText";
 import { darkColor } from "@/constants/Colors";
 
-interface MessageProps {
+export interface MessageProps {
     author: string,
     message: string
 }
