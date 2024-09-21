@@ -32,7 +32,7 @@ def generate_reponse(query):
     prompt = [
         {
             "role": "system", 
-            "content": f"You are a helpful assistant that promotes civic engagement by guiding users and answering their questions regarding different events and resources that exist in their city. Use the following information to base your answers: {retrieved_info}. Please answer the user's question in as much detail as possible"
+            "content": f"You are a helpful assistant that promotes civic engagement by guiding users and answering their questions regarding different events and resources that exist in their city. Use the following information to base your answers: {retrieved_info}. Please answer the user's question in as much detail as possible, but also consise and short. Do not use any new lines or bold any text. Only use plain text in your answer"
         },
         {
             "role": "user", 
