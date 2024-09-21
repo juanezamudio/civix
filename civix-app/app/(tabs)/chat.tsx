@@ -4,7 +4,7 @@ import { darkColor, white } from "@/constants/Colors";
 import { screenPadding } from "@/constants/Layout";
 import { router } from "expo-router";
 import { useState } from "react";
-import { Button, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function Chat() {
     
@@ -12,12 +12,13 @@ export default function Chat() {
     
     return (
         <View style={styles.container}>
-
             <ScrollView>
                 <ThemedText type="defaultSemiBold">This is the beginning of your conversation...</ThemedText>
             </ScrollView>
 
-            <View style={{flexDirection: 'row'}}>
+            <KeyboardAvoidingView
+                behavior={ Platform.OS === 'ios' ? 'padding' : 'height' }
+                style={{flexDirection: 'row', paddingVertical: screenPadding}}>
                 <TextInput
                     style={styles.textFieldStyle}
                     placeholder="Type your message here"
@@ -25,7 +26,7 @@ export default function Chat() {
                     value={messageTextField}
                     onChangeText={(text) => setMessageTextField(text)} />
                 <ThemedButton title="Send"/>
-            </View>
+            </KeyboardAvoidingView>
         </View>
     )
 }
@@ -34,6 +35,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: screenPadding,
+        paddingTop: 60,
         backgroundColor: white
     },
     textFieldStyle: {

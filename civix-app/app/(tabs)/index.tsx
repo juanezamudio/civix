@@ -2,7 +2,7 @@ import ThemedButton from "@/components/ThemedButton";
 import { ThemedText } from "@/components/ThemedText";
 import { screenPadding } from "@/constants/Layout";
 import { router } from "expo-router";
-import { Button, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text } from "react-native";
 
 export default function Home() {
     return (
