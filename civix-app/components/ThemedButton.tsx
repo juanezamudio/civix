@@ -1,7 +1,7 @@
 import { accentColor, white } from "@/constants/Colors";
-import { type ButtonProps, Pressable, ViewProps, StyleSheet, Text } from "react-native";
+import { type ButtonProps, Pressable, ViewProps, StyleSheet, Text, PressableProps } from "react-native";
 
-export type ThemedButtonProps = ViewProps & {
+export type ThemedButtonProps = PressableProps & {
     type?: 'default' | 'outline',
     title?: string
 }
