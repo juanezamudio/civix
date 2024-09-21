@@ -1,4 +1,4 @@
-import { lightAccentColor } from "@/constants/Colors";
+import { accentColor, lightAccentColor } from "@/constants/Colors";
 import { View, StyleSheet } from "react-native";
 import { ThemedText } from "./ThemedText";
 import Magnifier from '../components/Magnifier';
@@ -19,16 +19,28 @@ export default function Card({title, body, svg}: any) {
                 ? (<Notebook/>)
                 :<></>
             }
-            <ThemedText type="subtitle">{title}</ThemedText>
-            <ThemedText >{body}</ThemedText>
+            <View style={styles.textContainer}>
+                <ThemedText type="subtitle" style={styles.title}>{title}</ThemedText>
+                <ThemedText style={styles.body}>{body}</ThemedText>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 25,
+        marginTop: 15,
         borderRadius: 15,
-        backgroundColor: lightAccentColor
+        backgroundColor: 'grey',
+        flexDirection: 'row'
+    },
+    textContainer: {
+        flexDirection: 'column'
+    },
+    title: {
+        color: accentColor
+    },
+    body: {
+        color: accentColor
     }
 })

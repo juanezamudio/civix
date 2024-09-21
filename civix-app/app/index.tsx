@@ -16,8 +16,8 @@ export default function Landing() {
             <ThemedText type='title' style={[styles.title, {color: darkColor}]}>Unlock the potential of civic engagement</ThemedText>
             <View style={styles.buttonContainer}>
             <ThemedButton 
-                title="Log In" 
-                type="default"
+                title="Login" 
+                type="outline"
                 style={styles.button}
                 onPress={() => {
                     router.push('/(tabs)/')
@@ -25,18 +25,30 @@ export default function Landing() {
             />
             <ThemedButton
                 title="Sign Up"
-                type="outline"
+                type="default"
                 style={styles.button}
                 onPress={() => {
 
                 }}
             />
             </View>
-            <Card
-                title="Resource Finder"
-                body="Test123"
-                svg="magnifier"
-            />
+            <View style={styles.cardContainer}>
+                <Card
+                    title="Resource Finder"
+                    body="Ask Civix GPT for real-time information on city resources, like food banks and clinics, or discover upcoming community events in your area."
+                    svg="magnifier"
+                />
+                <Card
+                    title="Civic Events"
+                    body="Stay updated on important town halls and build community through events tailored to your interests and location."
+                    svg="calendar"
+                />
+                <Card
+                    title="Report Community Issues"
+                    body="Report local problems like potholes, broken streetlights, and more, and track the status of your reports."
+                    svg="notebook"
+                />
+            </View>
         </View>
     )
 }
@@ -61,5 +73,9 @@ const styles = StyleSheet.create({
     button: {
         flex: 1,
         borderRadius: 10
+    },
+    cardContainer: {
+        marginTop: 15,
+        maxHeight: 50
     }
 })
