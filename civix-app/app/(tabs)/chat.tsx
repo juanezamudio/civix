@@ -9,43 +9,71 @@ import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TextInput, View
 export default function Chat() {
     
     const [messages, setMessages] = useState<MessageProps[]>([])
+    const [messagesCount, setMessagesCount] = useState<number>(0)
     const [messageTextField, setMessageTextField] = useState<string>('')
     const [textFieldDisabled, setTextFieldDisabled] = useState<Boolean>(false)
 
+    const host = process.env.EXPO_PUBLIC_SERVER_HOST || ''
+
     const handleSubmitMessage = async () => {
-        setMessages([...messages, {
+        
+        if (messageTextField === '') return
+
+        const userMessage = {
             author: "You",
             message: messageTextField
-        }])
-        setMessageTextField('')
+        }
+        
+        // setMessages([...messages, userMessage])
         setTextFieldDisabled(true)
+
+        const body = {
+            user_text: messageTextField
+        }
+        
+        const response = await fetch(`http://${host}:8000/user_input`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+
+        const data = await response.text()
+        const formattedData = data.replaceAll('\\"', '"').substring(1, data.length - 2)
+
+        const newMessage = {
+            author: 'CiVi',
+            message: formattedData
+        }
+
+        setMessages([...messages, userMessage,newMessage])
+
+        setMessageTextField('')
+        setTextFieldDisabled(false)
     }
 
     useEffect(() => {
-        if (messages.length) {
-            if (messages[messages.length - 1].author === 'You') {
-                setTimeout(() => {
-                    console.log('Can send new message')
-                    setTextFieldDisabled(false)
-                }, 5000)
-            }
-        }
+        setMessagesCount(messagesCount + 1)
+        console.log(host);
+        
     }, [messages])
     
     return (
         <View style={styles.container}>
             <ScrollView>
                 <ThemedText type="defaultSemiBold" style={{color: darkColor}}>This is the beginning of your conversation...</ThemedText>
-            </ScrollView>
 
             {
                 messages.map((message, index) => (
                     <Message
-                        key={index}
-                        author={message.author}
-                        message={message.message}/>
-                ))
-            }
+                    key={index}
+                    author={message.author}
+                    message={message.message}/>
+                    ))
+                }
+
+            </ScrollView>
 
             <KeyboardAvoidingView
                 behavior={ Platform.OS === 'ios' ? 'padding' : 'height' }
